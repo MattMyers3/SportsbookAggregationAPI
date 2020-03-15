@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="51076e5f-e3c1-4f9c-b55f-c486f5e7ec48" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Data/Configuration/GameConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Data/Configuration/SportConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Data/Configuration/TeamConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Data/Configuration/GameResultConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Data/Configuration/GameLineConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/BBB3B884-123D-47EA-9CD1-5BED540D02AE/1E0/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Data/Configuration/GamblingSiteConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2E7F94DA-1173-4EA2-8F7B-8CF1E4F4E91A/4/DeveloperExceptionPageMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Controllers/GamesController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Controllers/GameLinesController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Data/Models/GamblingSite.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Controllers/TeamsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/SportsbookModels/BestAvailableGameLine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Data/Models/GameLine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Data/DatabaseInitializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Data/Context.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Data/SqlServerRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Data/IRepository.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Data/Models/GamblingSite.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Data/Configuration/GamblingSiteConfiguration.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Data/Configuration/GameConfiguration.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Data/Configuration/GameLineConfiguration.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Data/Configuration/GameResultConfiguration.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Data/Configuration/SportConfiguration.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Data/Configuration/TeamConfiguration.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Data/DatabaseInitializer.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Data/IRepository.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Data/SqlServerRepository.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Data/Context.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/SportsbookModels/BestAvailableGameLine.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Program.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/appsettings.Development.json" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/SportsbookAggregationAPI.csproj" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Startup.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/appsettings.json" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Controllers/GamesController.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Controllers/TeamsController.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Controllers/GameLinesController.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Z33wBXHVAEJRgJwUrvXAu6jriq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.SolutionExplorerActivator" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.SportsbookAggregationAPI">
+    <configuration name="SportsbookAggregationAPI" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/SportsbookAggregationAPI/SportsbookAggregationAPI.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
+      <option name="LAUNCH_PROFILE_NAME" value="SportsbookAggregationAPI" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SportsbookAggregationAPI: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/SportsbookAggregationAPI/SportsbookAggregationAPI.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="51076e5f-e3c1-4f9c-b55f-c486f5e7ec48" name="Default Changelist" comment="" />
+      <created>1584054186471</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584054186471</updated>
+      <workItem from="1584054188015" duration="8983000" />
+      <workItem from="1584299668815" duration="4667000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="WindowStateProjectService">
+    <state x="1561" y="467" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1584055195520">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1561" y="467" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1584055195520" />
+    <state width="413" height="466" key="DebuggerActiveHint" timestamp="1584303305833">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="413" height="466" key="DebuggerActiveHint/0.0.2560.1400@0.0.2560.1400" timestamp="1584303305833" />
+    <state width="1234" height="488" key="GridCell.Tab.0.bottom" timestamp="1584304310189">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310189" />
+    <state width="1234" height="488" key="GridCell.Tab.0.center" timestamp="1584304310188">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310188" />
+    <state width="1234" height="488" key="GridCell.Tab.0.left" timestamp="1584304310187">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310187" />
+    <state width="1234" height="488" key="GridCell.Tab.0.right" timestamp="1584304310189">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310189" />
+    <state width="1234" height="488" key="GridCell.Tab.1.bottom" timestamp="1584304311463">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584304311463" />
+    <state width="1234" height="488" key="GridCell.Tab.1.center" timestamp="1584304311463">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584304311463" />
+    <state width="1234" height="488" key="GridCell.Tab.1.left" timestamp="1584304311463">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584304311463" />
+    <state width="1234" height="488" key="GridCell.Tab.1.right" timestamp="1584304311463">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584304311463" />
+    <state width="1234" height="488" key="GridCell.Tab.2.bottom" timestamp="1584304310057">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
+    <state width="1234" height="488" key="GridCell.Tab.2.center" timestamp="1584304310057">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
+    <state width="1234" height="488" key="GridCell.Tab.2.left" timestamp="1584304310056">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310056" />
+    <state width="1234" height="488" key="GridCell.Tab.2.right" timestamp="1584304310057">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
+    <state width="1234" height="488" key="GridCell.Tab.3.bottom" timestamp="1584304310057">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
+    <state width="1234" height="488" key="GridCell.Tab.3.center" timestamp="1584304310057">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
+    <state width="1234" height="488" key="GridCell.Tab.3.left" timestamp="1584304310057">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
+    <state width="1234" height="488" key="GridCell.Tab.3.right" timestamp="1584304310057">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
+    <state width="1234" height="488" key="GridCell.Tab.4.bottom" timestamp="1584304310057">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.4.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
+    <state width="1234" height="488" key="GridCell.Tab.4.center" timestamp="1584304310057">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.4.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
+    <state width="1234" height="488" key="GridCell.Tab.4.left" timestamp="1584304310057">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.4.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
+    <state width="1234" height="488" key="GridCell.Tab.4.right" timestamp="1584304310057">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="488" key="GridCell.Tab.4.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
+    <state width="647" height="700" key="XDebugger.FullValuePopup" timestamp="1584303296574">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="647" height="700" key="XDebugger.FullValuePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1584303296574" />
+    <state x="1580" y="432" width="680" height="536" key="find.popup" timestamp="1584302942132">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1580" y="432" width="680" height="536" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1584302942132" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SportsbookAggregationAPI/Controllers/GameLinesController.cs</url>
+          <line>26</line>
+          <properties documentPath="$PROJECT_DIR$/SportsbookAggregationAPI/Controllers/GameLinesController.cs" initialLine="26">
+            <startOffsets>
+              <option value="712" />
+            </startOffsets>
+            <endOffsets>
+              <option value="801" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SportsbookAggregationAPI/Startup.cs</url>
+          <line>28</line>
+          <properties documentPath="$PROJECT_DIR$/SportsbookAggregationAPI/Startup.cs" initialLine="28">
+            <startOffsets>
+              <option value="893" />
+            </startOffsets>
+            <endOffsets>
+              <option value="894" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SportsbookAggregationAPI/Startup.cs</url>
+          <line>36</line>
+          <properties documentPath="$PROJECT_DIR$/SportsbookAggregationAPI/Startup.cs" initialLine="36">
+            <startOffsets>
+              <option value="1290" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1291" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SportsbookAggregationAPI/Startup.cs</url>
+          <line>20</line>
+          <properties documentPath="$PROJECT_DIR$/SportsbookAggregationAPI/Startup.cs" initialLine="20">
+            <startOffsets>
+              <option value="607" />
+            </startOffsets>
+            <endOffsets>
+              <option value="608" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

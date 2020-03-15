@@ -1,0 +1,12 @@
+﻿using System;
+
+namespace SportsbookAggregation.Data.Models
+{
+    public class Game
+    {
+        public Guid GameId { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public Guid? HomeTeamId { get; set; }
+        public Guid? AwayTeamId { get; set; }
+    }
+}
