@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51076e5f-e3c1-4f9c-b55f-c486f5e7ec48" name="Default Changelist" comment="" />
+    <list default="true" id="51076e5f-e3c1-4f9c-b55f-c486f5e7ec48" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SportsbookAggregationAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SportsbookAggregationAPI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SportsbookAggregationAPI/Controllers/GameLinesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SportsbookAggregationAPI/Controllers/GameLinesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SportsbookAggregationAPI/Controllers/GamesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SportsbookAggregationAPI/Controllers/GamesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SportsbookAggregationAPI/SportsbookModels/BestAvailableGameLine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SportsbookAggregationAPI/SportsbookModels/BestAvailableGameLine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SportsbookAggregationAPI/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SportsbookAggregationAPI/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SportsbookAggregationAPI/bin/Debug/netcoreapp3.1/SportsbookAggregationAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SportsbookAggregationAPI/bin/Debug/netcoreapp3.1/SportsbookAggregationAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SportsbookAggregationAPI/bin/Debug/netcoreapp3.1/SportsbookAggregationAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SportsbookAggregationAPI/bin/Debug/netcoreapp3.1/SportsbookAggregationAPI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SportsbookAggregationAPI/obj/Debug/netcoreapp3.1/SportsbookAggregationAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SportsbookAggregationAPI/obj/Debug/netcoreapp3.1/SportsbookAggregationAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SportsbookAggregationAPI/obj/Debug/netcoreapp3.1/SportsbookAggregationAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SportsbookAggregationAPI/obj/Debug/netcoreapp3.1/SportsbookAggregationAPI.pdb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/SportsbookAggregationAPI/Data/Configuration/GameConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
@@ -44,19 +57,20 @@
         <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Data/IRepository.cs" />
         <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Data/SqlServerRepository.cs" />
         <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Data/Context.cs" />
-        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/SportsbookModels/BestAvailableGameLine.cs" />
         <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Program.cs" />
         <option value="$PROJECT_DIR$/SportsbookAggregationAPI/appsettings.Development.json" />
         <option value="$PROJECT_DIR$/SportsbookAggregationAPI/SportsbookAggregationAPI.csproj" />
-        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Startup.cs" />
         <option value="$PROJECT_DIR$/SportsbookAggregationAPI/appsettings.json" />
-        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Controllers/GamesController.cs" />
         <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Controllers/TeamsController.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Controllers/GamesController.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Startup.cs" />
+        <option value="$PROJECT_DIR$/SportsbookAggregationAPI/SportsbookModels/BestAvailableGameLine.cs" />
         <option value="$PROJECT_DIR$/SportsbookAggregationAPI/Controllers/GameLinesController.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1Z33wBXHVAEJRgJwUrvXAu6jriq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -65,6 +79,7 @@
   <component name="PropertiesComponent">
     <property name="Rider.SolutionExplorerActivator" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TWShift.3" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.SportsbookAggregationAPI">
@@ -110,7 +125,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584054186471</updated>
       <workItem from="1584054188015" duration="8983000" />
-      <workItem from="1584299668815" duration="4667000" />
+      <workItem from="1584299668815" duration="10839000" />
     </task>
     <servers />
   </component>
@@ -128,86 +143,86 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="413" height="466" key="DebuggerActiveHint/0.0.2560.1400@0.0.2560.1400" timestamp="1584303305833" />
-    <state width="1234" height="488" key="GridCell.Tab.0.bottom" timestamp="1584304310189">
+    <state width="1234" height="398" key="GridCell.Tab.0.bottom" timestamp="1584331681238">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310189" />
-    <state width="1234" height="488" key="GridCell.Tab.0.center" timestamp="1584304310188">
+    <state width="1234" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584331681238" />
+    <state width="1234" height="398" key="GridCell.Tab.0.center" timestamp="1584331681238">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310188" />
-    <state width="1234" height="488" key="GridCell.Tab.0.left" timestamp="1584304310187">
+    <state width="1234" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584331681238" />
+    <state width="1234" height="398" key="GridCell.Tab.0.left" timestamp="1584331681238">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310187" />
-    <state width="1234" height="488" key="GridCell.Tab.0.right" timestamp="1584304310189">
+    <state width="1234" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584331681238" />
+    <state width="1234" height="398" key="GridCell.Tab.0.right" timestamp="1584331681238">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310189" />
-    <state width="1234" height="488" key="GridCell.Tab.1.bottom" timestamp="1584304311463">
+    <state width="1234" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584331681238" />
+    <state width="1234" height="488" key="GridCell.Tab.1.bottom" timestamp="1584319282284">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584304311463" />
-    <state width="1234" height="488" key="GridCell.Tab.1.center" timestamp="1584304311463">
+    <state width="1234" height="488" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584319282284" />
+    <state width="1234" height="488" key="GridCell.Tab.1.center" timestamp="1584319282284">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584304311463" />
-    <state width="1234" height="488" key="GridCell.Tab.1.left" timestamp="1584304311463">
+    <state width="1234" height="488" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584319282284" />
+    <state width="1234" height="488" key="GridCell.Tab.1.left" timestamp="1584319282284">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584304311463" />
-    <state width="1234" height="488" key="GridCell.Tab.1.right" timestamp="1584304311463">
+    <state width="1234" height="488" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584319282284" />
+    <state width="1234" height="488" key="GridCell.Tab.1.right" timestamp="1584319282284">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584304311463" />
-    <state width="1234" height="488" key="GridCell.Tab.2.bottom" timestamp="1584304310057">
+    <state width="1234" height="488" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584319282284" />
+    <state width="1234" height="488" key="GridCell.Tab.2.bottom" timestamp="1584319282284">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
-    <state width="1234" height="488" key="GridCell.Tab.2.center" timestamp="1584304310057">
+    <state width="1234" height="488" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584319282284" />
+    <state width="1234" height="488" key="GridCell.Tab.2.center" timestamp="1584319282284">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
-    <state width="1234" height="488" key="GridCell.Tab.2.left" timestamp="1584304310056">
+    <state width="1234" height="488" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584319282284" />
+    <state width="1234" height="488" key="GridCell.Tab.2.left" timestamp="1584319282284">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310056" />
-    <state width="1234" height="488" key="GridCell.Tab.2.right" timestamp="1584304310057">
+    <state width="1234" height="488" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584319282284" />
+    <state width="1234" height="488" key="GridCell.Tab.2.right" timestamp="1584319282284">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
-    <state width="1234" height="488" key="GridCell.Tab.3.bottom" timestamp="1584304310057">
+    <state width="1234" height="488" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584319282284" />
+    <state width="1234" height="488" key="GridCell.Tab.3.bottom" timestamp="1584319282284">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
-    <state width="1234" height="488" key="GridCell.Tab.3.center" timestamp="1584304310057">
+    <state width="1234" height="488" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584319282284" />
+    <state width="1234" height="488" key="GridCell.Tab.3.center" timestamp="1584319282284">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
-    <state width="1234" height="488" key="GridCell.Tab.3.left" timestamp="1584304310057">
+    <state width="1234" height="488" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584319282284" />
+    <state width="1234" height="488" key="GridCell.Tab.3.left" timestamp="1584319282284">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
-    <state width="1234" height="488" key="GridCell.Tab.3.right" timestamp="1584304310057">
+    <state width="1234" height="488" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584319282284" />
+    <state width="1234" height="488" key="GridCell.Tab.3.right" timestamp="1584319282284">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
-    <state width="1234" height="488" key="GridCell.Tab.4.bottom" timestamp="1584304310057">
+    <state width="1234" height="488" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584319282284" />
+    <state width="1234" height="488" key="GridCell.Tab.4.bottom" timestamp="1584319282285">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.4.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
-    <state width="1234" height="488" key="GridCell.Tab.4.center" timestamp="1584304310057">
+    <state width="1234" height="488" key="GridCell.Tab.4.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584319282285" />
+    <state width="1234" height="488" key="GridCell.Tab.4.center" timestamp="1584319282284">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.4.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
-    <state width="1234" height="488" key="GridCell.Tab.4.left" timestamp="1584304310057">
+    <state width="1234" height="488" key="GridCell.Tab.4.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584319282284" />
+    <state width="1234" height="488" key="GridCell.Tab.4.left" timestamp="1584319282284">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.4.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
-    <state width="1234" height="488" key="GridCell.Tab.4.right" timestamp="1584304310057">
+    <state width="1234" height="488" key="GridCell.Tab.4.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584319282284" />
+    <state width="1234" height="488" key="GridCell.Tab.4.right" timestamp="1584319282284">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="488" key="GridCell.Tab.4.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584304310057" />
+    <state width="1234" height="488" key="GridCell.Tab.4.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584319282284" />
     <state width="647" height="700" key="XDebugger.FullValuePopup" timestamp="1584303296574">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -248,13 +263,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/SportsbookAggregationAPI/Startup.cs</url>
-          <line>36</line>
+          <line>37</line>
           <properties documentPath="$PROJECT_DIR$/SportsbookAggregationAPI/Startup.cs" initialLine="36">
             <startOffsets>
-              <option value="1290" />
+              <option value="1322" />
             </startOffsets>
             <endOffsets>
-              <option value="1291" />
+              <option value="1323" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="8" />

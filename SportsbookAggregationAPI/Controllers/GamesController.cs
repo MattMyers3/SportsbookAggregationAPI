@@ -22,8 +22,10 @@ namespace SportsbookAggregationAPI.Controllers
 
         // GET: api/Games
         [HttpGet]
-        public ActionResult<IEnumerable<Game>> GetGames()
+        public ActionResult<IEnumerable<Game>> GetGames(bool onlyFutureGames)
         {
+            if (onlyFutureGames)
+                return context.GameRepository.Read().Where(r => r.TimeStamp >= DateTime.Now).ToList();
             return context.GameRepository.Read().ToList();
         }
 
