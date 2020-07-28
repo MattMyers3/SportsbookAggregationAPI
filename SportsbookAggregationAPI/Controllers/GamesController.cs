@@ -22,11 +22,17 @@ namespace SportsbookAggregationAPI.Controllers
 
         // GET: api/Games
         [HttpGet]
-        public ActionResult<IEnumerable<Game>> GetGames(bool onlyFutureGames)
+        public ActionResult<IEnumerable<Game>> GetGames(int year, int month, int day)
         {
-            if (onlyFutureGames)
+            try
+            {
+                var date = new DateTime(year, month, day);
+                return context.GameRepository.Read().Where(r => r.TimeStamp.Date == date.Date).ToList();
+            }
+            catch(Exception ex)
+            {
                 return context.GameRepository.Read().Where(r => r.TimeStamp >= DateTime.Now).ToList();
-            return context.GameRepository.Read().ToList();
+            }
         }
 
         // GET: api/Games/5
