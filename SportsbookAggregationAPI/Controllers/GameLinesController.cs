@@ -97,17 +97,31 @@ namespace SportsbookAggregationAPI.Controllers
             foreach (var availableGameLine in availableGameLines)
             {
                 var gamblingSiteName = gamblingSites.First(s => s.GamblingSiteId == availableGameLine.GamblingSiteId).Name;
-                if (bestAvailableGameLine.CurrentHomeSpread == null ||
+                if(bestAvailableGameLine.CurrentHomeSpread == availableGameLine.CurrentSpread && 
+                    bestAvailableGameLine.CurrentHomeSpreadPayout < availableGameLine.HomeSpreadPayout)
+                {
+                    bestAvailableGameLine.CurrentHomeSpreadPayout = availableGameLine.HomeSpreadPayout.Value;
+                    bestAvailableGameLine.HomeSpreadSite = gamblingSiteName;
+                }
+                else if (bestAvailableGameLine.CurrentHomeSpread == null ||
                     bestAvailableGameLine.CurrentHomeSpread < availableGameLine.CurrentSpread)
                 {
+                    bestAvailableGameLine.CurrentHomeSpreadPayout = availableGameLine.HomeSpreadPayout.Value;
                     bestAvailableGameLine.CurrentHomeSpread = availableGameLine.CurrentSpread;
                     bestAvailableGameLine.HomeSpreadSite = gamblingSiteName;
                 }
 
                 var currentAwaySpread = availableGameLine.CurrentSpread * -1;
-                if (bestAvailableGameLine.CurrentAwaySpread == null ||
+                if (bestAvailableGameLine.CurrentAwaySpread == currentAwaySpread &&
+                    bestAvailableGameLine.CurrentAwaySpreadPayout < availableGameLine.AwaySpreadPayout)
+                {
+                    bestAvailableGameLine.CurrentAwaySpreadPayout = availableGameLine.AwaySpreadPayout.Value;
+                    bestAvailableGameLine.AwaySpreadSite = gamblingSiteName;
+                }
+                else if (bestAvailableGameLine.CurrentAwaySpread == null ||
                     bestAvailableGameLine.CurrentAwaySpread < currentAwaySpread)
                 {
+                    bestAvailableGameLine.CurrentHomeSpreadPayout = availableGameLine.AwaySpreadPayout.Value;
                     bestAvailableGameLine.CurrentAwaySpread = currentAwaySpread;
                     bestAvailableGameLine.AwaySpreadSite = gamblingSiteName;
                 }
