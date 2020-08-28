@@ -5,7 +5,8 @@
  using Microsoft.Data.SqlClient;
  using Microsoft.EntityFrameworkCore;
  using Microsoft.Extensions.Configuration;
- using SportsbookAggregation.Data.Models;
+using MySql.Data.MySqlClient;
+using SportsbookAggregation.Data.Models;
  using SportsbookAggregationAPI.Data.Configuration;
  using SportsbookAggregationAPI.Data.Models;
 
@@ -40,7 +41,7 @@
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connection);
+            optionsBuilder.UseMySQL(connection);
         }
 
         private static DbConnection GetDbConnection()
@@ -55,7 +56,7 @@
                 connectionString = configuration.GetConnectionString("SportsbookDatabase");
             }
             Console.WriteLine($"Connection String: {connectionString}");
-            return new SqlConnection(connectionString);
+            return new MySqlConnection(connectionString);
         }
     }
 }
