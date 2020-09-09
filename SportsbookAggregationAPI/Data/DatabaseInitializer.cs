@@ -11,24 +11,26 @@ namespace SportsbookAggregationAPI.Data
         {
             dbContext.Database.EnsureCreated();
 
-            if (dbContext.TeamRepository.Read().Any())
-            {
-                return; // DB has been seeded
-            }
-
             var nbaGuid = Guid.NewGuid();
+            var nflGuid = Guid.NewGuid();
+
             var sports = new[]
             {
-                new Sport {SportId = nbaGuid, Name = "NBA"}
+                new Sport {SportId = nbaGuid, Name = "NBA"},
+                new Sport {SportId = nflGuid, Name = "NFL"}
             };
             foreach (var sport in sports)
             {
-                dbContext.SportRepository.Create(sport);
+                if (!dbContext.SportRepository.Read().Where(s => s.Name == sport.Name).Any())
+                {
+                    dbContext.SportRepository.Create(sport);
+                }
             }
             dbContext.SaveChanges();
 
             var teams = new[]
             {
+                //NBA
                 new Team {TeamId = Guid.NewGuid(), SportId = nbaGuid, Location = "Atlanta", Mascot = "Hawks"},
                 new Team {TeamId = Guid.NewGuid(), SportId = nbaGuid, Location = "Boston", Mascot = "Celtics"},
                 new Team {TeamId = Guid.NewGuid(), SportId = nbaGuid, Location = "Brooklyn", Mascot = "Nets"},
@@ -59,13 +61,57 @@ namespace SportsbookAggregationAPI.Data
                 new Team {TeamId = Guid.NewGuid(), SportId = nbaGuid, Location = "Toronto", Mascot = "Raptors"},
                 new Team {TeamId = Guid.NewGuid(), SportId = nbaGuid, Location = "Utah", Mascot = "Jazz"},
                 new Team {TeamId = Guid.NewGuid(), SportId = nbaGuid, Location = "Washington", Mascot = "Wizards"},
+
+                //NFL
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Arizona", Mascot = "Cardinals"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Atlanta", Mascot = "Falcons"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Baltimore", Mascot = "Ravens"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Buffalo", Mascot = "Bills"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Carolina", Mascot = "Panthers"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Chicago", Mascot = "Bears"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Cincinnati", Mascot = "Bengals"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Cleveland", Mascot = "Browns"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Dallas", Mascot = "Cowboys"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Denver", Mascot = "Broncos"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Detroit", Mascot = "Lions"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Green Bay", Mascot = "Packers"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Houston", Mascot = "Texans"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Indianapolis", Mascot = "Colts"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Jacksonville", Mascot = "Jaguars"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Kansas City", Mascot = "Chiefs"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Los Angeles", Mascot = "Chargers"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Los Angeles", Mascot = "Rams"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Las Vegas", Mascot = "Raiders"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Miami", Mascot = "Dolphins"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Minnesota", Mascot = "Vikings"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "New England", Mascot = "Patriots"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "New Orleans", Mascot = "Saints"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "New York", Mascot = "Giants"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "New York", Mascot = "Jets"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Philadelphia", Mascot = "Eagles"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Pittsburgh", Mascot = "Steelers"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Seattle", Mascot = "Seahawks"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "San Francisco", Mascot = "49ers"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Tampa Bay", Mascot = "Buccaneers"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Tennessee", Mascot = "Titans"},
+                new Team {TeamId = Guid.NewGuid(), SportId = nflGuid, Location = "Washington", Mascot = "Football Team"},
             };
+
             foreach (var team in teams)
             {
-                dbContext.TeamRepository.Create(team);
+                if (!dbContext.TeamRepository.Read().Where(t => t.Location == team.Location && t.Mascot == team.Mascot).Any())
+                {
+                    dbContext.TeamRepository.Create(team);
+                }
             }
-            dbContext.GamblingSiteRepository.Create(new GamblingSite {GamblingSiteId = Guid.NewGuid(), Name = "Fanduel"});
-            dbContext.GamblingSiteRepository.Create(new GamblingSite {GamblingSiteId = Guid.NewGuid(), Name = "FoxBet"});
+            string[] books = { "Fanduel", "FoxBet", "DraftKings", "BetRivers" };
+            foreach (var book in books)
+            {
+                if (!dbContext.GamblingSiteRepository.Read().Where(s => s.Name == book).Any())
+                {
+                    dbContext.GamblingSiteRepository.Create(new GamblingSite { GamblingSiteId = Guid.NewGuid(), Name = book });
+                }
+            }
             dbContext.SaveChanges();
         }
     }
