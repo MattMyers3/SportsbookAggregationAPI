@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\myers\\RiderProjects\\SportsbookAggregationAPI\\SportsbookAggregationAPI\\SportsbookAggregationAPI.csproj": {}
+    "C:\\Users\\vfore_000\\source\\repos\\SportsbookAggregationAPI\\SportsbookAggregationAPI\\SportsbookAggregationAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\myers\\RiderProjects\\SportsbookAggregationAPI\\SportsbookAggregationAPI\\SportsbookAggregationAPI.csproj": {
+    "C:\\Users\\vfore_000\\source\\repos\\SportsbookAggregationAPI\\SportsbookAggregationAPI\\SportsbookAggregationAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\myers\\RiderProjects\\SportsbookAggregationAPI\\SportsbookAggregationAPI\\SportsbookAggregationAPI.csproj",
+        "projectUniqueName": "C:\\Users\\vfore_000\\source\\repos\\SportsbookAggregationAPI\\SportsbookAggregationAPI\\SportsbookAggregationAPI.csproj",
         "projectName": "SportsbookAggregationAPI",
-        "projectPath": "C:\\Users\\myers\\RiderProjects\\SportsbookAggregationAPI\\SportsbookAggregationAPI\\SportsbookAggregationAPI.csproj",
-        "packagesPath": "C:\\Users\\myers\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\myers\\RiderProjects\\SportsbookAggregationAPI\\SportsbookAggregationAPI\\obj\\",
+        "projectPath": "C:\\Users\\vfore_000\\source\\repos\\SportsbookAggregationAPI\\SportsbookAggregationAPI\\SportsbookAggregationAPI.csproj",
+        "packagesPath": "C:\\Users\\vfore_000\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vfore_000\\source\\repos\\SportsbookAggregationAPI\\SportsbookAggregationAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\myers\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\vfore_000\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\myers\\.dotnet\\NuGetFallbackFolder": {},
-          "http://nuget.episerver.com/feed/packages.svc/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -70,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
