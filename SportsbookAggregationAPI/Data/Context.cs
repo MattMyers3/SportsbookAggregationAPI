@@ -46,7 +46,7 @@ using SportsbookAggregation.Data.Models;
 
         private static DbConnection GetDbConnection()
         {
-            var connectionString = Environment.GetEnvironmentVariable("ConnectionString");
+            var connectionString = Environment.GetEnvironmentVariable("ConnectionString", EnvironmentVariableTarget.User);
             if (string.IsNullOrEmpty(connectionString))
             {
                 var builder = new ConfigurationBuilder()
