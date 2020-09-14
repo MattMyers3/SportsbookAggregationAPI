@@ -2,15 +2,14 @@
  using System;
  using System.Data.Common;
  using System.IO;
- using Microsoft.Data.SqlClient;
  using Microsoft.EntityFrameworkCore;
  using Microsoft.Extensions.Configuration;
-using MySql.Data.MySqlClient;
-using SportsbookAggregation.Data.Models;
+ using MySql.Data.MySqlClient;
+ using SportsbookAggregation.Data.Models;
  using SportsbookAggregationAPI.Data.Configuration;
  using SportsbookAggregationAPI.Data.Models;
 
- namespace SportsbookAggregationAPI.Data
+namespace SportsbookAggregationAPI.Data
 {
     public class Context : DbContext
     {
@@ -41,7 +40,7 @@ using SportsbookAggregation.Data.Models;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL(connection);
+            optionsBuilder.UseMySql(connection);
         }
 
         private static DbConnection GetDbConnection()
