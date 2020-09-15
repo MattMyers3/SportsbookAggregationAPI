@@ -157,5 +157,13 @@ namespace SportsbookAggregationAPI.Controllers
 
             return bestAvailableGameLine;
         }
+
+        [HttpGet("LastRefreshTime")]
+        public ActionResult<LastRefresh> GetLastRefreshTime(int year, int month, int day)
+        {
+            var date = new DateTime(year, month, day);
+            var gamesIds = context.GameRepository.Read().Where(r => r.TimeStamp.Date == date.Date).Select(g => g.GameId).ToList();
+            return new LastRefresh { LastRefreshTime = context.GameLineRepository.Read().Where(r => gamesIds.Contains(r.GameId)).Max(l => l.LastRefresh) };
+        }
     }
 }
