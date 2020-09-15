@@ -171,8 +171,7 @@ namespace SportsbookAggregationAPI.Controllers
 
                 var lastRefreshTime = context.GameLineRepository.Read().Where(r => gamesIds.Contains(r.GameId)).Select(l => l.LastRefresh).DefaultIfEmpty().Max();
 
-                TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
-                return new LastRefresh { LastRefreshTime = TimeZoneInfo.ConvertTime(lastRefreshTime, easternZone) };
+                return new LastRefresh { LastRefreshTime = lastRefreshTime };
             }
             catch(Exception ex)
             {
