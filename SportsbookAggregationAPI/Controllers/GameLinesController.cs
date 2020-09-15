@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -161,15 +162,41 @@ namespace SportsbookAggregationAPI.Controllers
         [HttpGet("LastRefreshTime")]
         public ActionResult<LastRefresh> GetLastRefreshTime(int year, int month, int day)
         {
-            var date = new DateTime(year, month, day);
-            var gamesIds = context.GameRepository.Read().Where(r => r.TimeStamp.Date == date.Date).Select(g => g.GameId).ToList();
-            if (!gamesIds.Any())
-                return new LastRefresh { LastRefreshTime = new DateTime() };
+            try
+            {
+                var date = new DateTime(year, month, day);
+                var gamesIds = context.GameRepository.Read().Where(r => r.TimeStamp.Date == date.Date).Select(g => g.GameId).ToList();
+                if (!gamesIds.Any())
+                    return new LastRefresh { LastRefreshTime = new DateTime() };
 
-            var lastRefreshTime = context.GameLineRepository.Read().Where(r => gamesIds.Contains(r.GameId)).Select(l => l.LastRefresh).DefaultIfEmpty().Max();
+                var lastRefreshTime = context.GameLineRepository.Read().Where(r => gamesIds.Contains(r.GameId)).Select(l => l.LastRefresh).DefaultIfEmpty().Max();
 
-            TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
-            return new LastRefresh { LastRefreshTime = TimeZoneInfo.ConvertTime(lastRefreshTime, easternZone) };
+                TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+                return new LastRefresh { LastRefreshTime = TimeZoneInfo.ConvertTime(lastRefreshTime, easternZone) };
+            }
+            catch(Exception ex)
+            {
+                string filePath = Directory.GetCurrentDirectory() + "\\ErrorLog.txt";
+
+                using (StreamWriter writer = new StreamWriter(filePath, true))
+                {
+                    writer.WriteLine("-----------------------------------------------------------------------------");
+                    writer.WriteLine("Date : " + DateTime.Now.ToString());
+                    writer.WriteLine();
+
+                    var exception = ex;
+                    while (exception != null)
+                    {
+                        writer.WriteLine(exception.GetType().FullName);
+                        writer.WriteLine("Message : " + exception.Message);
+                        writer.WriteLine("StackTrace : " + exception.StackTrace);
+
+                        exception = exception.InnerException;
+                    }
+                }
+                throw ex;
+            }
+            
         }
     }
 }
