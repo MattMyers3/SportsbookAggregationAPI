@@ -176,7 +176,7 @@ namespace SportsbookAggregationAPI.Controllers
             }
             catch(Exception ex)
             {
-                string filePath = Directory.GetCurrentDirectory() + "\\ErrorLog.txt";
+                string filePath = "\\var\\www\\html\\sportsbettingaggregation.com\\ErrorLog.txt";
 
                 using (StreamWriter writer = new StreamWriter(filePath, true))
                 {
