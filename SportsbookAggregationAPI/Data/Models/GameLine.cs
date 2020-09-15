@@ -23,5 +23,7 @@ namespace SportsbookAggregation.Data.Models
 
         public GamblingSite GamblingSite { get; set; }
         public Guid GamblingSiteId { get; set; }
+
+        public DateTime LastRefresh { get; set; }
     }
 }
