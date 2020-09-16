@@ -9,6 +9,9 @@ namespace SportsbookAggregationAPI.SportsbookModels
         
         public double? CurrentUnder { get; set; }
         public string UnderSite { get; set; }
+
+        public int? CurrentOverPayout { get; set; }
+        public int? CurrentUnderPayout { get; set; }
         
         public double? CurrentHomeSpread { get; set; }
         public int CurrentHomeSpreadPayout { get; set; }
