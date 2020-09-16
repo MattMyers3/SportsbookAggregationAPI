@@ -121,22 +121,36 @@ namespace SportsbookAggregationAPI.Controllers
                 else if (bestAvailableGameLine.CurrentAwaySpread == null ||
                     bestAvailableGameLine.CurrentAwaySpread < currentAwaySpread)
                 {
-                    bestAvailableGameLine.CurrentHomeSpreadPayout = availableGameLine.AwaySpreadPayout.Value;
+                    bestAvailableGameLine.CurrentAwaySpreadPayout = availableGameLine.AwaySpreadPayout.Value;
                     bestAvailableGameLine.CurrentAwaySpread = currentAwaySpread;
                     bestAvailableGameLine.AwaySpreadSite = gamblingSiteName;
                 }
 
-                if (bestAvailableGameLine.CurrentOver == null ||
+                if (bestAvailableGameLine.CurrentOver == availableGameLine.CurrentOverUnder &&
+                    bestAvailableGameLine.CurrentOverPayout < availableGameLine.OverPayOut)
+                {
+                    bestAvailableGameLine.CurrentOverPayout = availableGameLine.OverPayOut.Value;
+                    bestAvailableGameLine.HomeSpreadSite = gamblingSiteName;
+                }
+                else if (bestAvailableGameLine.CurrentOver == null ||
                     bestAvailableGameLine.CurrentOver > availableGameLine.CurrentOverUnder)
                 {
                     bestAvailableGameLine.CurrentOver = availableGameLine.CurrentOverUnder;
+                    bestAvailableGameLine.CurrentOverPayout = availableGameLine.OverPayOut;
                     bestAvailableGameLine.OverSite = gamblingSiteName;
                 }
 
-                if (bestAvailableGameLine.CurrentUnder == null ||
+                if (bestAvailableGameLine.CurrentUnder == availableGameLine.CurrentOverUnder &&
+                    bestAvailableGameLine.CurrentUnderPayout < availableGameLine.UnderPayout)
+                {
+                    bestAvailableGameLine.CurrentUnderPayout = availableGameLine.UnderPayout.Value;
+                    bestAvailableGameLine.HomeSpreadSite = gamblingSiteName;
+                }
+                else if (bestAvailableGameLine.CurrentUnder == null ||
                     bestAvailableGameLine.CurrentUnder < availableGameLine.CurrentOverUnder)
                 {
                     bestAvailableGameLine.CurrentUnder = availableGameLine.CurrentOverUnder;
+                    bestAvailableGameLine.CurrentUnderPayout = availableGameLine.UnderPayout;
                     bestAvailableGameLine.UnderSite = gamblingSiteName;
                 }
 
