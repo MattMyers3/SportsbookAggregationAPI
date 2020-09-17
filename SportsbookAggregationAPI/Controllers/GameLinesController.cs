@@ -81,7 +81,7 @@ namespace SportsbookAggregationAPI.Controllers
                     bestAvailableGameLine.CurrentOverPayout < availableGameLine.OverPayOut)
                 {
                     bestAvailableGameLine.CurrentOverPayout = availableGameLine.OverPayOut.Value;
-                    bestAvailableGameLine.HomeSpreadSite = gamblingSiteName;
+                    bestAvailableGameLine.OverSite = gamblingSiteName;
                 }
                 else if (bestAvailableGameLine.CurrentOver == null ||
                     bestAvailableGameLine.CurrentOver > availableGameLine.CurrentOverUnder)
@@ -95,7 +95,7 @@ namespace SportsbookAggregationAPI.Controllers
                     bestAvailableGameLine.CurrentUnderPayout < availableGameLine.UnderPayout)
                 {
                     bestAvailableGameLine.CurrentUnderPayout = availableGameLine.UnderPayout.Value;
-                    bestAvailableGameLine.HomeSpreadSite = gamblingSiteName;
+                    bestAvailableGameLine.UnderSite = gamblingSiteName;
                 }
                 else if (bestAvailableGameLine.CurrentUnder == null ||
                     bestAvailableGameLine.CurrentUnder < availableGameLine.CurrentOverUnder)
