@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
 using SportsbookAggregation.Data.Models;
 using SportsbookAggregationAPI.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SportsbookAggregationAPI.Controllers
 {
@@ -37,62 +35,6 @@ namespace SportsbookAggregationAPI.Controllers
             {
                 return NotFound();
             }
-
-            return team;
-        }
-
-        // PUT: api/Teams/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutTeam(Guid id, Team team)
-        {
-            if (id != team.TeamId)
-            {
-                return BadRequest();
-            }
-
-            context.Entry(team).State = EntityState.Modified;
-
-            try
-            {
-                await context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!context.TeamRepository.Read().Any(e => e.TeamId == id))
-                {
-                    return NotFound();
-                }
-
-                throw;
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Teams
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPost]
-        public ActionResult<Team> PostTeam(Team team)
-        {
-            context.TeamRepository.Create(team);
-
-            return CreatedAtAction("GetTeam", new {teamId = team.TeamId}, team);
-        }
-
-        // DELETE: api/Teams/5
-        [HttpDelete("{id}")]
-        public ActionResult<Team> DeleteTeam(Guid id)
-        {
-            var team = context.TeamRepository.Read().FirstOrDefault(r => r.TeamId == id);
-            if (team == null)
-            {
-                return NotFound();
-            }
-
-            context.TeamRepository.Delete(team);
 
             return team;
         }

@@ -35,56 +35,6 @@ namespace SportsbookAggregationAPI.Controllers
             return gameLine;
         }
 
-        // PUT: api/GameLines/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutGameLine(Guid id, GameLine gameLine)
-        {
-            if (id != gameLine.GameLineId)
-            {
-                return BadRequest();
-            }
-
-            context.Entry(gameLine).State = EntityState.Modified;
-
-            try
-            {
-                await context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!context.GameLineRepository.Read().Any(r => r.GameLineId == id))
-                {
-                    return NotFound();
-                }
-
-                throw;
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/GameLines
-        [HttpPost]
-        public ActionResult<GameLine> PostGameLine(GameLine gameLine)
-        {
-            context.GameLineRepository.Create(gameLine);
-
-            return CreatedAtAction("GetGameLine", new {gameLineId = gameLine.GameLineId}, gameLine);
-        }
-
-        // DELETE: api/GameLines/5
-        [HttpDelete("{id}")]
-        public ActionResult<GameLine> DeleteGameLine(Guid id)
-        {
-            var gameLine = context.GameLineRepository.Read().FirstOrDefault(r => r.GameLineId == id);
-            if (gameLine == null)
-            {
-                return NotFound();
-            }
-
-            context.GameLineRepository.Delete(gameLine);
-            return gameLine;
-        }
 
         [HttpGet("best/{id}")]
         public ActionResult<BestAvailableGameLine> GetBestAvailableGameLine(Guid id)
