@@ -22,12 +22,19 @@ namespace SportsbookAggregationAPI.Controllers
 
         // GET: api/Games
         [HttpGet]
-        public ActionResult<IEnumerable<Game>> GetGames(int year, int month, int day)
+        public ActionResult<IEnumerable<Game>> GetGames(int year, int month, int day, string? sport)
         {
             try
             {
                 var date = new DateTime(year, month, day);
-                return context.GameRepository.Read().Where(r => r.TimeStamp.Date == date.Date).ToList();
+                if (sport == null)
+                    return context.GameRepository.Read().Where(r => r.TimeStamp.Date == date.Date).ToList();
+                else
+                {
+                    var sportId = context.SportRepository.Read().Single(r => r.Name == sport).SportId;
+                    var teamsFromSports = context.TeamRepository.Read().Where(r => r.Sport.SportId == sportId);
+                    return context.GameRepository.Read().Where(r => r.TimeStamp.Date == date.Date && teamsFromSports.Any(t => t.TeamId == r.HomeTeamId)).ToList();
+                }
             }
             catch(Exception ex)
             {
