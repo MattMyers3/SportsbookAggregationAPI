@@ -1,9 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using SportsbookAggregation.Data.Models;
 using SportsbookAggregationAPI.Data;
 using SportsbookAggregationAPI.SportsbookModels;
@@ -37,17 +35,23 @@ namespace SportsbookAggregationAPI.Controllers
 
 
         [HttpGet("best/{id}")]
-        public ActionResult<BestAvailableGameLine> GetBestAvailableGameLine(Guid id)
+        public ActionResult<BestAvailableGameLine> GetBestAvailableGameLine(Guid id, [FromQuery] string sportsbooks)
         {
+            var bestAvailableGameLine = new BestAvailableGameLine();
+
+            if (sportsbooks == null)
+                return NotFound();
+            var sportsbooksArray = sportsbooks?.Split(',');
             var availableGameLines = context.GameLineRepository.Read().Where(r => r.GameId == id).ToList();
             if (!availableGameLines.Any())
                 return NotFound();
 
             var gamblingSites = context.GamblingSiteRepository.Read().ToList();
-            var bestAvailableGameLine = new BestAvailableGameLine();
             foreach (var availableGameLine in availableGameLines)
             {
                 var gamblingSiteName = gamblingSites.First(s => s.GamblingSiteId == availableGameLine.GamblingSiteId).Name;
+                if (sportsbooksArray != null && !sportsbooksArray.Contains(gamblingSiteName))
+                    continue;
                 if(bestAvailableGameLine.CurrentHomeSpread == availableGameLine.CurrentSpread && 
                     bestAvailableGameLine.CurrentHomeSpreadPayout < availableGameLine.HomeSpreadPayout)
                 {
