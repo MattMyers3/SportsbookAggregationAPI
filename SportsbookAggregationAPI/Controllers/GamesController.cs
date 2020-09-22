@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using SportsbookAggregation.Data.Models;
 using SportsbookAggregationAPI.Data;
 
@@ -20,18 +18,29 @@ namespace SportsbookAggregationAPI.Controllers
             this.context = context;
         }
 
-        public ActionResult<IEnumerable<Game>> GetGames(int year, int month, int day, string? sport)
+        public ActionResult<IEnumerable<Game>> GetGames(int startYear, int startMonth, int startDay, int? endYear, int? endMonth, int? endDay, string? sport)
         {
             try
             {
-                var date = new DateTime(year, month, day);
+                var startDate = new DateTime(startYear, startMonth, startDay);
+                if((endYear == null || endMonth == null || endDay == null) && sport == null)
+                {
+                    return context.GameRepository.Read().Where(r => r.TimeStamp.Date >= startDate.Date).ToList();
+                }
+                if(endYear == null || endMonth == null || endDay == null)
+                {
+                    var sportId = context.SportRepository.Read().Single(r => r.Name == sport).SportId;
+                    var teamsFromSports = context.TeamRepository.Read().Where(r => r.Sport.SportId == sportId);
+                    return context.GameRepository.Read().Where(r => r.TimeStamp.Date >= startDate.Date && teamsFromSports.Any(t => t.TeamId == r.HomeTeamId)).ToList();
+                }
+                var endDate = new DateTime(endYear.Value, endMonth.Value, endDay.Value);
                 if (sport == null)
-                    return context.GameRepository.Read().Where(r => r.TimeStamp.Date == date.Date).ToList();
+                    return context.GameRepository.Read().Where(r => r.TimeStamp.Date >= startDate.Date && r.TimeStamp.Date <= endDate.Date).ToList();
                 else
                 {
                     var sportId = context.SportRepository.Read().Single(r => r.Name == sport).SportId;
                     var teamsFromSports = context.TeamRepository.Read().Where(r => r.Sport.SportId == sportId);
-                    return context.GameRepository.Read().Where(r => r.TimeStamp.Date == date.Date && teamsFromSports.Any(t => t.TeamId == r.HomeTeamId)).ToList();
+                    return context.GameRepository.Read().Where(r => r.TimeStamp.Date >= startDate.Date && r.TimeStamp.Date <= endDate.Date && teamsFromSports.Any(t => t.TeamId == r.HomeTeamId)).ToList();
                 }
             }
             catch (Exception ex)
