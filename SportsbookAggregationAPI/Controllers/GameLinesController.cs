@@ -55,13 +55,13 @@ namespace SportsbookAggregationAPI.Controllers
                 if(bestAvailableGameLine.CurrentHomeSpread == availableGameLine.CurrentSpread && 
                     bestAvailableGameLine.CurrentHomeSpreadPayout < availableGameLine.HomeSpreadPayout)
                 {
-                    bestAvailableGameLine.CurrentHomeSpreadPayout = availableGameLine.HomeSpreadPayout.Value;
+                    bestAvailableGameLine.CurrentHomeSpreadPayout = availableGameLine.HomeSpreadPayout;
                     bestAvailableGameLine.HomeSpreadSite = gamblingSiteName;
                 }
                 else if (bestAvailableGameLine.CurrentHomeSpread == null ||
                     bestAvailableGameLine.CurrentHomeSpread < availableGameLine.CurrentSpread)
                 {
-                    bestAvailableGameLine.CurrentHomeSpreadPayout = availableGameLine.HomeSpreadPayout.Value;
+                    bestAvailableGameLine.CurrentHomeSpreadPayout = availableGameLine.HomeSpreadPayout;
                     bestAvailableGameLine.CurrentHomeSpread = availableGameLine.CurrentSpread;
                     bestAvailableGameLine.HomeSpreadSite = gamblingSiteName;
                 }
@@ -70,13 +70,13 @@ namespace SportsbookAggregationAPI.Controllers
                 if (bestAvailableGameLine.CurrentAwaySpread == currentAwaySpread &&
                     bestAvailableGameLine.CurrentAwaySpreadPayout < availableGameLine.AwaySpreadPayout)
                 {
-                    bestAvailableGameLine.CurrentAwaySpreadPayout = availableGameLine.AwaySpreadPayout.Value;
+                    bestAvailableGameLine.CurrentAwaySpreadPayout = availableGameLine.AwaySpreadPayout;
                     bestAvailableGameLine.AwaySpreadSite = gamblingSiteName;
                 }
                 else if (bestAvailableGameLine.CurrentAwaySpread == null ||
                     bestAvailableGameLine.CurrentAwaySpread < currentAwaySpread)
                 {
-                    bestAvailableGameLine.CurrentAwaySpreadPayout = availableGameLine.AwaySpreadPayout.Value;
+                    bestAvailableGameLine.CurrentAwaySpreadPayout = availableGameLine.AwaySpreadPayout;
                     bestAvailableGameLine.CurrentAwaySpread = currentAwaySpread;
                     bestAvailableGameLine.AwaySpreadSite = gamblingSiteName;
                 }
@@ -84,7 +84,7 @@ namespace SportsbookAggregationAPI.Controllers
                 if (bestAvailableGameLine.CurrentOver == availableGameLine.CurrentOverUnder &&
                     bestAvailableGameLine.CurrentOverPayout < availableGameLine.OverPayOut)
                 {
-                    bestAvailableGameLine.CurrentOverPayout = availableGameLine.OverPayOut.Value;
+                    bestAvailableGameLine.CurrentOverPayout = availableGameLine.OverPayOut;
                     bestAvailableGameLine.OverSite = gamblingSiteName;
                 }
                 else if (bestAvailableGameLine.CurrentOver == null ||
@@ -98,7 +98,7 @@ namespace SportsbookAggregationAPI.Controllers
                 if (bestAvailableGameLine.CurrentUnder == availableGameLine.CurrentOverUnder &&
                     bestAvailableGameLine.CurrentUnderPayout < availableGameLine.UnderPayout)
                 {
-                    bestAvailableGameLine.CurrentUnderPayout = availableGameLine.UnderPayout.Value;
+                    bestAvailableGameLine.CurrentUnderPayout = availableGameLine.UnderPayout;
                     bestAvailableGameLine.UnderSite = gamblingSiteName;
                 }
                 else if (bestAvailableGameLine.CurrentUnder == null ||
