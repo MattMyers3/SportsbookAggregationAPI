@@ -31,7 +31,7 @@ namespace SportsbookAggregationAPI.Controllers
                 {
                     var sportId = context.SportRepository.Read().Single(r => r.Name == sport).SportId;
                     var teamsFromSports = context.TeamRepository.Read().Where(r => r.Sport.SportId == sportId);
-                    return context.GameRepository.Read().Where(r => r.TimeStamp.Date >= startDate.Date && teamsFromSports.Any(t => t.TeamId == r.HomeTeamId)).ToList();
+                    return context.GameRepository.Read().Where(r => r.TimeStamp.Date == startDate.Date && teamsFromSports.Any(t => t.TeamId == r.HomeTeamId)).ToList();
                 }
                 var endDate = new DateTime(endYear.Value, endMonth.Value, endDay.Value);
                 if (sport == null)
