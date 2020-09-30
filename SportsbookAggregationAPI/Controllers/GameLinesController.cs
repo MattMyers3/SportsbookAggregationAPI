@@ -42,7 +42,7 @@ namespace SportsbookAggregationAPI.Controllers
             if (sportsbooks == null)
                 return NotFound();
             var sportsbooksArray = sportsbooks?.Split(',');
-            var availableGameLines = context.GameLineRepository.Read().Where(r => r.GameId == id).ToList();
+            var availableGameLines = context.GameLineRepository.Read().Where(r => r.GameId == id && r.IsAvailable);
             if (!availableGameLines.Any())
                 return NotFound();
 

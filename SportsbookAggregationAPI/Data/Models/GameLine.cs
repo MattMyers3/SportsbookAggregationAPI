@@ -16,6 +16,7 @@ namespace SportsbookAggregation.Data.Models
         public int? AwaySpreadPayout { get; set; }
         public int? HomeMoneyLinePayout{ get; set; }
         public int? AwayMoneyLinePayout { get; set; }
+        public bool IsAvailable { get; set; }
 
 
         public Game Game { get; set; }
