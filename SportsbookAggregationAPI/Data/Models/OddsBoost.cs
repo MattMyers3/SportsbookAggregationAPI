@@ -17,5 +17,6 @@ namespace SportsbookAggregationAPI.Data.Models
         public Guid GamblingSiteId { get; set; }
 
         public bool IsAvailable { get; set; }
+        public DateTime Date { get; set; }
     }
 }
