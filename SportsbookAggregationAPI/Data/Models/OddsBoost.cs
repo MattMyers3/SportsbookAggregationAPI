@@ -18,5 +18,7 @@ namespace SportsbookAggregationAPI.Data.Models
 
         public bool IsAvailable { get; set; }
         public DateTime Date { get; set; }
+
+        public DateTime LastRefresh { get; set; }
     }
 }
