@@ -2,7 +2,6 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using SportsbookAggregationAPI.Data;
-using SportsbookAggregationAPI.Data.Models;
 using SportsbookAggregationAPI.SportsbookModels;
 
 namespace SportsbookAggregationAPI.Controllers
@@ -31,13 +30,11 @@ namespace SportsbookAggregationAPI.Controllers
                 var gamblingSiteName = gamblingSites.First(s => s.GamblingSiteId == boost.GamblingSiteId).Name;
                 var boostWithSportsbook = new OddsBoostWithSportsbook
                 {
-                    IsAvailable = boost.IsAvailable,
                     BoostedOdds = boost.BoostedOdds,
                     Date = boost.Date,
                     Description = boost.Description,
                     OddsBoostId = boost.OddsBoostId,
                     PreviousOdds = boost.PreviousOdds,
-                    SportId = boost.SportId,
                     SiteName = gamblingSiteName
                 };
                 oddsBoostsWithSportsbooks.Add(boostWithSportsbook);
