@@ -73,19 +73,10 @@ namespace SportsbookAggregationAPI.Controllers
         public int GetHashCode([DisallowNull] PlayerProp prop)
         {
             var hash = new HashCode();
-            hash.Add(prop.PlayerPropId);
-            hash.Add(prop.PropBetType);
             hash.Add(prop.PropBetTypeId);
-            hash.Add(prop.Game);
             hash.Add(prop.GameId);
-            hash.Add(prop.GamblingSite);
-            hash.Add(prop.GamblingSiteId);
             hash.Add(prop.PlayerName);
             hash.Add(prop.Description);
-            hash.Add(prop.PropValue);
-            hash.Add(prop.Payout);
-            hash.Add(prop.LastRefresh);
-            hash.Add(prop.IsAvailable);
             return hash.ToHashCode();
         }
     }
