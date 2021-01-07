@@ -29,6 +29,8 @@ namespace SportsbookAggregationAPI.Data
         public IRepository<GameResult> GameResultRepository => new SqlServerRepository<GameResult>(this);
         public IRepository<OddsBoost> OddsBoostRepository => new SqlServerRepository<OddsBoost>(this);
         public IRepository<UserSettings> UserSettingsRepository => new SqlServerRepository<UserSettings>(this);
+        public IRepository<PlayerProp> PlayerPropRepository => new SqlServerRepository<PlayerProp>(this);
+        public IRepository<PropBetType> PropBetTypeRepository => new SqlServerRepository<PropBetType>(this);
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -41,7 +43,8 @@ namespace SportsbookAggregationAPI.Data
             modelBuilder.ApplyConfiguration(new GameResultConfiguration());
             modelBuilder.ApplyConfiguration(new OddsBoostConfiguration());
             modelBuilder.ApplyConfiguration(new UserSettingsConfiguration());
-
+            modelBuilder.ApplyConfiguration(new PlayerPropConfiguration());
+            modelBuilder.ApplyConfiguration(new PropBetTypeConfiguration());
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
