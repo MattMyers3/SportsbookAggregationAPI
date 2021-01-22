@@ -87,7 +87,7 @@ namespace SportsbookAggregationAPI.Controllers
     {
         public bool Equals([AllowNull] PlayerProp x, [AllowNull] PlayerProp y)
         {
-            return (FuzzySharp.Fuzz.Ratio(x.PlayerName, y.PlayerName) > 70) && x.PropBetType == y.PropBetType && x.Description == y.Description;
+            return (FuzzySharp.Fuzz.Ratio(x.PlayerName, y.PlayerName) > 76) && x.PropBetType == y.PropBetType && x.Description == y.Description;
         }
 
         public int GetHashCode([DisallowNull] PlayerProp prop)
