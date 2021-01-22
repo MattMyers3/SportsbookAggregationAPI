@@ -14,6 +14,8 @@ namespace SportsbookAggregationAPI.Controllers
     public class PlayerPropController : ControllerBase
     {
         private readonly Context context;
+        public const string Over = "Over";
+        public const string Under = "Under";
 
         public PlayerPropController(Context context)
         {
@@ -32,7 +34,6 @@ namespace SportsbookAggregationAPI.Controllers
                 return NotFound();
 
             var gamblingSites = context.GamblingSiteRepository.Read().ToList();
-            var propBetTypes = context.PropBetTypeRepository.Read().ToList();
 
             var playerProps = new List<BestAvailablePlayerProp>();
 
@@ -46,20 +47,39 @@ namespace SportsbookAggregationAPI.Controllers
                     var gamblingSiteName = gamblingSites.First(s => s.GamblingSiteId == prop.GamblingSiteId).Name;
                     if (sportsbooksArray != null && !sportsbooksArray.Contains(gamblingSiteName))
                         continue;
-                    if (bestAvailablePlayerProp.CurrentPayout == null || prop.Payout > bestAvailablePlayerProp.CurrentPayout)
+                    if (PropIsBetterOverBet(bestAvailablePlayerProp, prop) || PropIsBetterUnderBet(bestAvailablePlayerProp, prop) || PropIsBetterOtherBet(bestAvailablePlayerProp, prop))
                     {
                         bestAvailablePlayerProp.CurrentPayout = prop.Payout;
                         bestAvailablePlayerProp.PropValue = prop.PropValue;
                         bestAvailablePlayerProp.CurrentSite = gamblingSiteName;
                         bestAvailablePlayerProp.PlayerName = prop.PlayerName;
                         bestAvailablePlayerProp.PropDescription = prop.Description;
-                        bestAvailablePlayerProp.PropTypeDescription = propBetTypes.First(t => t.PropBetTypeId == prop.PropBetTypeId).Description;
+                        bestAvailablePlayerProp.PropTypeDescription = prop.PropBetType;
                     }
                 }
-                if(bestAvailablePlayerProp.PlayerName != null)
+                if (bestAvailablePlayerProp.PlayerName != null)
                     playerProps.Add(bestAvailablePlayerProp);
             }
             return playerProps;
+        }
+
+        private static bool PropIsBetterOtherBet(BestAvailablePlayerProp bestAvailablePlayerProp, PlayerProp prop)
+        {
+            return prop.Description != Under && prop.Description != Over && (bestAvailablePlayerProp.CurrentPayout == null || prop.Payout > bestAvailablePlayerProp.CurrentPayout);
+        }
+
+        private static bool PropIsBetterUnderBet(BestAvailablePlayerProp bestAvailablePlayerProp, PlayerProp prop)
+        {
+            return prop.Description == Under &&
+                                    (bestAvailablePlayerProp.CurrentPayout == null || prop.PropValue > bestAvailablePlayerProp.PropValue ||
+                                    (prop.PropValue == bestAvailablePlayerProp.PropValue && prop.Payout > bestAvailablePlayerProp.CurrentPayout));
+        }
+
+        private static bool PropIsBetterOverBet(BestAvailablePlayerProp bestAvailablePlayerProp, PlayerProp prop)
+        {
+            return prop.Description == Over &&
+                                    (bestAvailablePlayerProp.CurrentPayout == null || prop.PropValue < bestAvailablePlayerProp.PropValue ||
+                                    (prop.PropValue == bestAvailablePlayerProp.PropValue && prop.Payout > bestAvailablePlayerProp.CurrentPayout));
         }
     }
 
@@ -67,13 +87,13 @@ namespace SportsbookAggregationAPI.Controllers
     {
         public bool Equals([AllowNull] PlayerProp x, [AllowNull] PlayerProp y)
         {
-            return (FuzzySharp.Fuzz.Ratio(x.PlayerName, y.PlayerName) > 70) && x.PropBetTypeId == y.PropBetTypeId && x.Description == y.Description;
+            return (FuzzySharp.Fuzz.Ratio(x.PlayerName, y.PlayerName) > 76) && x.PropBetType == y.PropBetType && x.Description == y.Description;
         }
 
         public int GetHashCode([DisallowNull] PlayerProp prop)
         {
             var hash = new HashCode();
-            hash.Add(prop.PropBetTypeId);
+            hash.Add(prop.PropBetType);
             hash.Add(prop.GameId);
             hash.Add(prop.Description);
             return hash.ToHashCode();
