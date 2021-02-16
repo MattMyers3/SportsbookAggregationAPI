@@ -135,17 +135,17 @@ namespace SportsbookAggregationAPI.Controllers
         
         [Authorize]
         [HttpPut]
-        public HttpStatusCode UpdateGameLines(GameOffering[] gameOfferings)
+        public HttpStatusCode Update(GameOffering[] gameOfferings)
         {
             if (HttpContext.User.Claims.Single(c => c.Type == "cid")?.Value != "0oa60prueRe8fdEkB5d6") //Aggregator account
                 return HttpStatusCode.Unauthorized;
 
             using (var dbContext = new Context())
             {
-                var databaseUpdater = new GameLineService(dbContext);
+                var gameLineService = new GameLineService(dbContext);
                 using (var dbContextTransaction = dbContext.Database.BeginTransaction())
                 {
-                    databaseUpdater.Update(gameOfferings);
+                    gameLineService.Update(gameOfferings);
                     dbContextTransaction.Commit();
                 }
             }

@@ -1,7 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SportsbookAggregationAPI.Data;
+using SportsbookAggregationAPI.Data.AggregationModels;
+using SportsbookAggregationAPI.Services;
 using SportsbookAggregationAPI.SportsbookModels;
 
 namespace SportsbookAggregationAPI.Controllers
@@ -40,6 +44,25 @@ namespace SportsbookAggregationAPI.Controllers
                 oddsBoostsWithSportsbooks.Add(boostWithSportsbook);
             }
             return oddsBoostsWithSportsbooks;
+        }
+
+        [Authorize]
+        [HttpPut]
+        public HttpStatusCode Update(OddsBoostOffering[] oddsBoostOfferings)
+        {
+            if (HttpContext.User.Claims.Single(c => c.Type == "cid")?.Value != "0oa60prueRe8fdEkB5d6") //Aggregator account
+                return HttpStatusCode.Unauthorized;
+
+            using (var dbContext = new Context())
+            {
+                var oddsBoostService = new OddsBoostService(dbContext);
+                using (var dbContextTransaction = dbContext.Database.BeginTransaction())
+                {
+                    oddsBoostService.Update(oddsBoostOfferings);
+                    dbContextTransaction.Commit();
+                }
+            }
+            return HttpStatusCode.NoContent;
         }
 
         [HttpGet("LastRefreshTime")]
