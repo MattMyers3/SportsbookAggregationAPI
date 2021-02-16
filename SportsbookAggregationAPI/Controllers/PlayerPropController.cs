@@ -1,15 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SportsbookAggregationAPI.Data;
+using SportsbookAggregationAPI.Data.AggregationModels;
 using SportsbookAggregationAPI.Data.DbModels;
+using SportsbookAggregationAPI.Services;
 using SportsbookAggregationAPI.SportsbookModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Net;
 
 namespace SportsbookAggregationAPI.Controllers
 {
-    [Route("api/Games/{id}/BestProps")]
+    [Route("api/[controller]")]
     [ApiController]
     public class PlayerPropController : ControllerBase
     {
@@ -22,6 +26,7 @@ namespace SportsbookAggregationAPI.Controllers
             this.context = context;
         }
 
+        [Route("api/Games/{id}/BestProps")]
         [HttpGet]
         public ActionResult<List<BestAvailablePlayerProp>> GetBestAvailablePlayerProps(Guid id, [FromQuery] string sportsbooks)
         {
@@ -61,6 +66,25 @@ namespace SportsbookAggregationAPI.Controllers
                     playerProps.Add(bestAvailablePlayerProp);
             }
             return playerProps;
+        }
+
+        [Authorize]
+        [HttpPut]
+        public HttpStatusCode Update(PlayerPropOffering[] playerPropOfferings)
+        {
+            if (HttpContext.User.Claims.Single(c => c.Type == "cid")?.Value != "0oa60prueRe8fdEkB5d6") //Aggregator account
+                return HttpStatusCode.Unauthorized;
+
+            using (var dbContext = new Context())
+            {
+                var gameLineService = new PlayerPropService(dbContext);
+                using (var dbContextTransaction = dbContext.Database.BeginTransaction())
+                {
+                    gameLineService.Update(playerPropOfferings);
+                    dbContextTransaction.Commit();
+                }
+            }
+            return HttpStatusCode.NoContent;
         }
 
         private static bool PropIsBetterOtherBet(BestAvailablePlayerProp bestAvailablePlayerProp, PlayerProp prop)

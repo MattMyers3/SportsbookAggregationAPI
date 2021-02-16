@@ -57,7 +57,7 @@ namespace SportsbookAggregationAPI.Services
                 }
             }
             if(teamsNotFound.Count > 0)
-                APILogger.LogMessage("Needs mapping: " + teamsNotFound.ToString());
+                APILogger.LogMessage("Needs mapping: " + string.Join(',', teamsNotFound));
         }
 
         private bool IsCollegeSport(string sport)
