@@ -1,7 +1,6 @@
-﻿using SportsbookAggregation.Data.Models;
-using System;
+﻿using System;
 
-namespace SportsbookAggregationAPI.Data.Models
+namespace SportsbookAggregationAPI.Data.DbModels
 {
     public class OddsBoost
     {

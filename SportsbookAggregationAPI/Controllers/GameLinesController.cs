@@ -1,10 +1,16 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using SportsbookAggregationAPI.Data;
+using SportsbookAggregationAPI.Data.AggregationModels;
+using SportsbookAggregationAPI.Data.DbModels;
+using SportsbookAggregationAPI.Services;
+using SportsbookAggregationAPI.SportsbookModels;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Microsoft.AspNetCore.Mvc;
-using SportsbookAggregation.Data.Models;
-using SportsbookAggregationAPI.Data;
-using SportsbookAggregationAPI.SportsbookModels;
+using System.Net;
+using System.Text.Json;
 
 namespace SportsbookAggregationAPI.Controllers
 {
@@ -125,6 +131,25 @@ namespace SportsbookAggregationAPI.Controllers
             }
 
             return bestAvailableGameLine;
+        }
+        
+        [Authorize]
+        [HttpPut]
+        public HttpStatusCode UpdateGameLines(GameOffering[] gameOfferings)
+        {
+            if (HttpContext.User.Claims.Single(c => c.Type == "cid")?.Value != "0oa60prueRe8fdEkB5d6") //Aggregator account
+                return HttpStatusCode.Unauthorized;
+
+            using (var dbContext = new Context())
+            {
+                var databaseUpdater = new GameLineService(dbContext);
+                using (var dbContextTransaction = dbContext.Database.BeginTransaction())
+                {
+                    databaseUpdater.Update(gameOfferings);
+                    dbContextTransaction.Commit();
+                }
+            }
+            return HttpStatusCode.NoContent;
         }
 
         [HttpGet("LastRefreshTime")]

@@ -11,6 +11,11 @@ namespace SportsbookAggregationAPI.Data
             this.context = context;
         }
 
+        public void CreateWithoutSaving(T entity)
+        {
+            context.Add(entity);
+        }
+
         public IQueryable<T> Read()
         {
             return context.Set<T>();

@@ -1,13 +1,10 @@
-﻿﻿#nullable enable
- using System;
- using System.Data.Common;
- using System.IO;
- using Microsoft.EntityFrameworkCore;
- using Microsoft.Extensions.Configuration;
- using MySql.Data.MySqlClient;
- using SportsbookAggregation.Data.Models;
- using SportsbookAggregationAPI.Data.Configuration;
- using SportsbookAggregationAPI.Data.Models;
+﻿#nullable enable
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using MySql.Data.MySqlClient;
+using SportsbookAggregationAPI.Data.Configuration;
+using SportsbookAggregationAPI.Data.DbModels;
+using System.Data.Common;
 
 namespace SportsbookAggregationAPI.Data
 {
@@ -52,7 +49,7 @@ namespace SportsbookAggregationAPI.Data
 
         private static DbConnection GetDbConnection()
         {
-            return new MySqlConnection(Startup.Configuration.GetConnectionString("SportsbookDatabase"));
+            return new MySqlConnection(Startup.Configuration.GetConnectionString());
         }
     }
 }

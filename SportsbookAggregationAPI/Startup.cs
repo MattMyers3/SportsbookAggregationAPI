@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Okta.AspNetCore;
+using SportsbookAggregation.Config;
 using SportsbookAggregationAPI.Data;
 
 namespace SportsbookAggregationAPI
@@ -14,10 +15,10 @@ namespace SportsbookAggregationAPI
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            Configuration = new ConfigWrapper(configuration);
         }
 
-        public static IConfiguration Configuration { get; set; }
+        public static ConfigWrapper Configuration { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -36,7 +37,7 @@ namespace SportsbookAggregationAPI
 
             services.AddAuthorization();
             services.AddDbContext<Context>(options =>
-                options.UseMySql(Configuration.GetConnectionString("SportsbookDatabase")));
+                options.UseMySql(Configuration.GetConnectionString()));
             services.AddControllers();
             services.Configure<HostOptions>(opts => opts.ShutdownTimeout = TimeSpan.FromDays(30));
         }

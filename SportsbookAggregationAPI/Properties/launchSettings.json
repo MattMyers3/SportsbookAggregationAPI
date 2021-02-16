@@ -11,7 +11,7 @@
   "profiles": {
     "IIS Express": {
         "commandName": "IISExpress",
-        "launchBrowser": false,
+        "launchBrowser": true,
         "launchUrl": "api/gamblingsite",
         "environmentVariables": {
             "ASPNETCORE_ENVIRONMENT": "Development"
@@ -19,7 +19,7 @@
     },
     "SportsbookAggregationAPI": {
       "commandName": "Project",
-      "launchBrowser": false,
+      "launchBrowser": true,
       "launchUrl": "api/gamblingsite",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {

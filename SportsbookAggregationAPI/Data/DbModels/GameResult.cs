@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SportsbookAggregation.Data.Models
+namespace SportsbookAggregationAPI.Data.DbModels
 {
     public class GameResult
     {

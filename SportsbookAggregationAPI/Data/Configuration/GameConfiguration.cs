@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SportsbookAggregation.Data.Models;
+using SportsbookAggregationAPI.Data.DbModels;
 
 namespace SportsbookAggregationAPI.Data.Configuration
 {
