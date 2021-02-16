@@ -4,6 +4,7 @@
 {
     public interface IRepository<T>
     {
+        void CreateWithoutSaving(T entity);
         IQueryable<T> Read();
         void Create(T entity);
         void Delete(T entity);

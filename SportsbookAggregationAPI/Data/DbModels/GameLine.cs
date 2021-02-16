@@ -1,7 +1,6 @@
 ﻿using System;
-using SportsbookAggregationAPI.Data.Models;
 
-namespace SportsbookAggregation.Data.Models
+namespace SportsbookAggregationAPI.Data.DbModels
 {
     public class GameLine
     {

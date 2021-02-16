@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SportsbookAggregation.Data.Models;
 using SportsbookAggregationAPI.Data;
+using SportsbookAggregationAPI.Data.DbModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
