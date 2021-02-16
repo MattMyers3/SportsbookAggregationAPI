@@ -48,7 +48,7 @@ namespace SportsbookAggregationAPI.Controllers
 
         [Authorize]
         [HttpPut]
-        public HttpStatusCode Update(OddsBoostOffering[] oddsBoostOfferings)
+        public HttpStatusCode Update(OddsBoostUpdateObject oddsBoostUpdateObject)
         {
             if (HttpContext.User.Claims.Single(c => c.Type == "cid")?.Value != "0oa60prueRe8fdEkB5d6") //Aggregator account
                 return HttpStatusCode.Unauthorized;
@@ -58,7 +58,7 @@ namespace SportsbookAggregationAPI.Controllers
                 var oddsBoostService = new OddsBoostService(dbContext);
                 using (var dbContextTransaction = dbContext.Database.BeginTransaction())
                 {
-                    oddsBoostService.Update(oddsBoostOfferings);
+                    oddsBoostService.Update(oddsBoostUpdateObject);
                     dbContextTransaction.Commit();
                 }
             }

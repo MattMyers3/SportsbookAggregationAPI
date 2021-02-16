@@ -20,10 +20,10 @@ namespace SportsbookAggregationAPI.Services
             this.dbContext = dbContext;
         }
 
-        public void Update(IEnumerable<GameOffering> gameOfferings)
+        public void Update(GameLineUpdateObject gameLinesUpdateObject)
         {
-            SetOfferingsToNotAvailable();
-            WriteGameOfferings(gameOfferings);
+            SetOfferingsToNotAvailable(gameLinesUpdateObject.Sportsbooks);
+            WriteGameOfferings(gameLinesUpdateObject.GameLines);
             dbContext.SaveChanges();
         }
 
@@ -65,9 +65,9 @@ namespace SportsbookAggregationAPI.Services
             return sport == "NCAAF" || sport == "NCAAB";
         }
 
-        public void SetOfferingsToNotAvailable()
+        public void SetOfferingsToNotAvailable(IEnumerable<string> sportsbooks)
         {
-            var allLines = dbContext.GameLineRepository.Read().Where(l => l.IsAvailable);
+            var allLines = dbContext.GameLineRepository.Read().Where(l => l.IsAvailable && sportsbooks.Contains(l.GamblingSite.Name));
             foreach (var gameLine in allLines)
                 gameLine.IsAvailable = false;
         }

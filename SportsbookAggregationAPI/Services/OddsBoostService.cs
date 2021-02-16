@@ -16,10 +16,10 @@ namespace SportsbookAggregationAPI.Services
             this.dbContext = dbContext;
         }
 
-        public void Update(IEnumerable<OddsBoostOffering> oddsBoostOffering)
+        public void Update(OddsBoostUpdateObject oddsBoostUpdateObject)
         {
-            SetOfferingsToNotAvailable();
-            WriteOddsBoosts(oddsBoostOffering);
+            SetOfferingsToNotAvailable(oddsBoostUpdateObject.Sportsbooks);
+            WriteOddsBoosts(oddsBoostUpdateObject.OddsBoosts);
             dbContext.SaveChanges();
         }
 
@@ -70,9 +70,9 @@ namespace SportsbookAggregationAPI.Services
             });
         }
 
-        public void SetOfferingsToNotAvailable()
+        public void SetOfferingsToNotAvailable(IEnumerable<string> sportsbooks)
         {
-            var allBoosts = dbContext.OddsBoostRepository.Read().Where(b => b.IsAvailable);
+            var allBoosts = dbContext.OddsBoostRepository.Read().Where(b => b.IsAvailable && sportsbooks.Contains(b.GamblingSite.Name));
             foreach (var boost in allBoosts)
                 boost.IsAvailable = false;
         }

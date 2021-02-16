@@ -70,7 +70,7 @@ namespace SportsbookAggregationAPI.Controllers
 
         [Authorize]
         [HttpPut]
-        public HttpStatusCode Update(PlayerPropOffering[] playerPropOfferings)
+        public HttpStatusCode Update(PlayerPropUpdateObject playerPropUpdateObject)
         {
             if (HttpContext.User.Claims.Single(c => c.Type == "cid")?.Value != "0oa60prueRe8fdEkB5d6") //Aggregator account
                 return HttpStatusCode.Unauthorized;
@@ -80,7 +80,7 @@ namespace SportsbookAggregationAPI.Controllers
                 var gameLineService = new PlayerPropService(dbContext);
                 using (var dbContextTransaction = dbContext.Database.BeginTransaction())
                 {
-                    gameLineService.Update(playerPropOfferings);
+                    gameLineService.Update(playerPropUpdateObject);
                     dbContextTransaction.Commit();
                 }
             }

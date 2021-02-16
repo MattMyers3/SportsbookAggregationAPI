@@ -19,10 +19,10 @@ namespace SportsbookAggregationAPI.Services
             this.dbContext = dbContext;
         }
 
-        public void Update(IEnumerable<PlayerPropOffering> playerPropOfferings)
+        public void Update(PlayerPropUpdateObject playerPropUpdateObject)
         {
-            SetOfferingsToNotAvailable();
-            WritePlayerProps(playerPropOfferings);
+            SetOfferingsToNotAvailable(playerPropUpdateObject.Sportsbooks);
+            WritePlayerProps(playerPropUpdateObject.PlayerProps);
             dbContext.SaveChanges();
         }
         public void WritePlayerProps(IEnumerable<PlayerPropOffering> playerProps)
@@ -87,9 +87,9 @@ namespace SportsbookAggregationAPI.Services
                     && p.PropBetType == playerProp.Description && p.Description == playerProp.OutcomeDescription
                     && p.PlayerName == playerProp.PlayerName && p.GamblingSiteId == gamblingSiteId);
         }
-        public void SetOfferingsToNotAvailable()
+        public void SetOfferingsToNotAvailable(IEnumerable<string> sportsbooks)
         {
-            var allPlayerProps = dbContext.PlayerPropRepository.Read().Where(p => p.IsAvailable);
+            var allPlayerProps = dbContext.PlayerPropRepository.Read().Where(p => p.IsAvailable && sportsbooks.Contains(p.GamblingSite.Name));
             foreach (var prop in allPlayerProps)
                 prop.IsAvailable = false;
         }
