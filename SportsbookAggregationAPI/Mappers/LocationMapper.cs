@@ -60,6 +60,8 @@
                     return "UCF";
                 case "college of charleston":
                     return "Charleston";
+                case "charleston sou":
+                    return "Charleston Southern";
                 case "charlotte u":
                     return "Charlotte";
                 case "tennessee chattanooga mocs":
@@ -149,6 +151,8 @@
                     return "Milwaukee";
                 case "miss valley state":
                     return "Mississippi Valley State";
+                case "minnesota u":
+                    return "Minnesota";
                 case "mississippi rebels":
                 case "mississippi":
                     return "Ole Miss";
@@ -163,6 +167,8 @@
                     return "Nicholls";
                 case "nicholls state colonels":
                     return "Nicholls";
+                case "uni":
+                    return "Northern Iowa";
                 case "north alabama":
                 case "north alabama lions":
                     return "UNA";
@@ -186,6 +192,8 @@
                     return "Omaha";
                 case "ipfw":
                     return "Purdue Fort Wayne";
+                case "sam houston st":
+                    return "Sam Houston State";
                 case "saint marys":
                 case "saint marys ca":
                 case "saint mary´s ca":
@@ -207,6 +215,8 @@
                 case "southern methodist mustangs":
                 case "southern methodist":
                     return "SMU";
+                case "so illinois":
+                    return "Southern Illinois";
                 case "southern mississippi":
                 case "southern mississippi golden eagles":
                     return "Southern Miss";
@@ -222,6 +232,7 @@
                 case "st francis brooklyn":
                 case "st. francis ny":
                 case "st. francis (ny)":
+                case "saint francis brooklyn":
                     return "St. Francis Brooklyn";
                 case "st. francis (pa)":
                 case "st francis (pa)":
@@ -279,6 +290,7 @@
                 case "massachusetts minutemen":
                     return "UMass";
                 case "md baltimore county retrievers":
+                case "md baltimore co":
                     return "UMBC";
                 case "missouri kansas city kangaroos":
                     return "UMKC";
