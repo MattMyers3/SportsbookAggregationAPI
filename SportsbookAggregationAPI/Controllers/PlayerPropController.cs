@@ -13,7 +13,6 @@ using System.Net;
 
 namespace SportsbookAggregationAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class PlayerPropController : ControllerBase
     {
@@ -68,6 +67,7 @@ namespace SportsbookAggregationAPI.Controllers
             return playerProps;
         }
 
+        [Route("api/[controller]")]
         [Authorize]
         [HttpPut]
         public HttpStatusCode Update(PlayerPropUpdateObject playerPropUpdateObject)
