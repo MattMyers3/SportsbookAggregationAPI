@@ -131,6 +131,8 @@
                 case "loyola (md)":
                 case "loyola md":
                     return "Loyola Maryland";
+                case "lmu":
+                    return "Loyola Marymount";
                 case "miami florida":
                 case "miami florida hurricanes":
                 case "miami hurricanes":
@@ -240,6 +242,7 @@
                     return "Saint Francis";
                 case "usc upstate":
                 case "sc upstate spartans":
+                case "usc-upstate":
                     return "South Carolina Upstate";
                 case "st bonaventure":
                 case "saint bonaventure bonnies":
@@ -291,6 +294,7 @@
                     return "UMass";
                 case "md baltimore county retrievers":
                 case "md baltimore co":
+                case "md baltimore":
                     return "UMBC";
                 case "missouri kansas city kangaroos":
                     return "UMKC";
@@ -310,6 +314,7 @@
                 case "tennessee martin":
                 case "tennessee-martin":
                 case "tennessee martin skyhawks":
+                case "tenn martin":
                     return "UT Martin";
                 case "utah valley state":
                     return "Utah Valley";
@@ -330,6 +335,10 @@
                     return "VCU";
                 case "virginia military keydets":
                     return "VMI";
+                case "washington u":
+                    return "Washington";
+                case "william and mary":
+                    return "William & Mary";
                 default:
                     return college;
             }
