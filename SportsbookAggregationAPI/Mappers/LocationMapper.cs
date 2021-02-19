@@ -26,6 +26,8 @@
                     return "American";
                 case "albany ny great danes":
                     return "Albany";
+                case "appalachian st":
+                    return "Appalachian State";
                 case "arkansas pine bluff":
                 case "arkansas pine bluff golden lions":
                     return "Arkansas-Pine Bluff";
