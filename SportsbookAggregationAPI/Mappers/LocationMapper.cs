@@ -75,6 +75,7 @@
                 case "depaul":
                     return "DePaul";
                 case "detroit":
+                case "detroit u.":
                     return "Detroit Mercy";
                 case "east tenn state":
                 case "etsu":
@@ -169,6 +170,8 @@
                     return "Nicholls";
                 case "nicholls state colonels":
                     return "Nicholls";
+                case "northdakotastate":
+                    return "North Dakota State";
                 case "uni":
                     return "Northern Iowa";
                 case "north alabama":
@@ -285,6 +288,7 @@
                 case "ucsb":
                 case "cal santa barbara":
                 case "cal santa barbara gauchos":
+                case "santa barbara":
                     return "UC Santa Barbara";
                 case "illinois chicago":
                 case "illinois chicago flames":
